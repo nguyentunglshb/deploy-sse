@@ -2,7 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const app = express();
 const path = require("path");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const { getPostById } = require("./stub/posts");
 
 const indexPath = path.resolve(__dirname, "..", "build", "index.html");
