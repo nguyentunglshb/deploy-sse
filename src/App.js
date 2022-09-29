@@ -1,7 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
+  const [article, setArticle] = useState();
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const res = await axios(
+          "https://gateway.staging.dahai.art/api/article?articleId=14&identity"
+        );
+        console.log(res);
+        setArticle(res);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
